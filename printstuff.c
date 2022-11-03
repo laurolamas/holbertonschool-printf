@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * printChar - Prints a character
@@ -8,8 +8,7 @@ include "main.h"
 
 int printChar(char c)
 {
-	_putchar(c);
-
+	write(1, &c, 1);
 	return (1);
 }
 
@@ -29,7 +28,7 @@ int printString(char *str)
 	}
 
 	for (i = 0; str[i] != '\0' ; i++)
-		_putchar(str[i]);
+		printChar(str[i]);
 
 	return (i);
 
