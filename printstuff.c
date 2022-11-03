@@ -3,34 +3,29 @@
 /**
  * printChar - Prints a character
  * @c: the character to print
- *
+ * Return: 1
  */
 
-void printChar(char c)
+int printChar(char c)
 {
-	write(1, &c, 1);
+	_putchar(c);
+
+	return (1);
 }
 
 /**
  * printString - Prints a string
  * @str: the string to copy
+ * Return: len of string
  */
 
-void printString(char *str)
+int printString(char *str)
 {
 	int i;
 
 	for (i = 0; str[i] != '\0' ; i++)
 		_putchar(str[i]);
-}
 
-/**
- * printSing - Should print %
- * _putchar - prints a character
- *
- */
+	return (i);
 
-void printSing(void)
-{
-	_putchar(37);
 }

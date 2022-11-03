@@ -1,5 +1,6 @@
 #ifndef main_h
 #define main_h
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -8,8 +9,7 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-void printChar(char c);
-void printString(char *str);
-void printSing(void);
+int printChar(char c);
+int printString(char *str);
 
 #endif
