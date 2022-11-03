@@ -29,11 +29,9 @@ int _printf(const char *format, ...)
 	int i;
 	va_list ptr;
 
-	if (!format)
-		return (0);
-
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
 	va_start(ptr, format);
-
 	for (i = 0; i < _strlen(format); i++)
 	{
 		switch (format[i])
@@ -59,16 +57,12 @@ int _printf(const char *format, ...)
 				}
 				i++;
 				break;
-
 			case 92:
 				break;
-
 			default:
 				count += printChar(format[i]);
 		}
 	}
-
 	va_end(ptr);
-
 	return (count);
 }

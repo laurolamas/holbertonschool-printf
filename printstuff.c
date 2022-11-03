@@ -1,4 +1,4 @@
-#include "main.h"
+include "main.h"
 
 /**
  * printChar - Prints a character
@@ -25,8 +25,7 @@ int printString(char *str)
 
 	if (!str)
 	{
-		printString("(null)");
-		return (0);
+		return (printString("(null)"));
 	}
 
 	for (i = 0; str[i] != '\0' ; i++)
