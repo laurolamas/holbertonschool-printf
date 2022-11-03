@@ -23,6 +23,12 @@ int printString(char *str)
 {
 	int i;
 
+	if (!str)
+	{
+		printString("(null)");
+		return (0);
+	}
+
 	for (i = 0; str[i] != '\0' ; i++)
 		_putchar(str[i]);
 

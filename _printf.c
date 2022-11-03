@@ -29,8 +29,10 @@ int _printf(const char *format, ...)
 	int i;
 	va_list ptr;
 
-	va_start(ptr, format);
+	if (!format)
+		return (0);
 
+	va_start(ptr, format);
 
 	for (i = 0; i < _strlen(format); i++)
 	{
@@ -40,8 +42,7 @@ int _printf(const char *format, ...)
 				switch (format[(i + 1)])
 				{
 					case 'c':
-						_putchar(va_arg(ptr, int));
-						count ++;
+						count += printChar(va_arg(ptr, int));
 						break;
 
 					case 's':
@@ -49,11 +50,12 @@ int _printf(const char *format, ...)
 						break;
 
 					case '%':
-						_putchar ('%');
+						count += printChar('%');
 						break;
 
 					default:
-						_putchar('X');
+						count += printChar('%');
+						count += printChar(format[i + 1]);
 				}
 				i++;
 				break;
@@ -62,7 +64,7 @@ int _printf(const char *format, ...)
 				break;
 
 			default:
-				_putchar(format[i]);
+				count += printChar(format[i]);
 		}
 	}
 
