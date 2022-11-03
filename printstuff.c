@@ -33,3 +33,31 @@ int printString(char *str)
 	return (i);
 
 }
+
+/**
+ * printNum - Prints an integer
+ * @n: the number to print
+ * Return: len of number
+ */
+int printNum(int n)
+{
+	int ncpy = n;
+	int count = 0;
+
+	while (ncpy != 0)
+	{
+		ncpy = ncpy / 10;
+		count++;
+	}
+	if (n < 0)
+	{
+		printChar('-');
+		n = -n;
+	}
+	if (n / 10)
+		printNum(n / 10);
+
+	printChar(n % 10 + '0');
+
+	return (count);
+}

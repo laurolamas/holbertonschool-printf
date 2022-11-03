@@ -33,7 +33,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	va_start(ptr, format);
 	for (i = 0; i < _strlen(format); i++)
-	{
 		switch (format[i])
 		{
 			case '%':
@@ -42,15 +41,16 @@ int _printf(const char *format, ...)
 					case 'c':
 						count += printChar(va_arg(ptr, int));
 						break;
-
 					case 's':
 						count += printString(va_arg(ptr, char *));
 						break;
-
 					case '%':
 						count += printChar('%');
 						break;
-
+					case 'd':
+					case 'i':
+						count += printNum(va_arg(ptr, int));
+						break;
 					default:
 						count += printChar('%');
 						count += printChar(format[i + 1]);
@@ -62,7 +62,6 @@ int _printf(const char *format, ...)
 			default:
 				count += printChar(format[i]);
 		}
-	}
 	va_end(ptr);
 	return (count);
 }

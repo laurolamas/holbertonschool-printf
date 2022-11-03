@@ -11,5 +11,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int printChar(char c);
 int printString(char *str);
+int printNum(int n);
 
 #endif
