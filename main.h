@@ -8,5 +8,8 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+void printChar(char c);
+void printString(char *str);
+void printSing(void);
 
 #endif
