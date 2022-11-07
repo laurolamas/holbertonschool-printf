@@ -25,6 +25,6 @@ int printSign(va_list);
 
 int _putchar(char c);
 int putstring(char *str);
-int putNum(int n);
+int putNum(long int n);
 
 #endif

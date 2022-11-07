@@ -40,7 +40,7 @@ int putstring(char *str)
  * Return: len of number
  */
 
-int putNum(int n)
+int putNum(long int n)
 {
 	int count = 0;
 
