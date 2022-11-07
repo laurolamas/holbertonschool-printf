@@ -1,21 +1,6 @@
 #include "main.h"
 
 /**
- * _strlen - aaaaaaa
- * @s: aaaaaaa
- * Return: bbbbbbb
- */
-int _strlen(const char *s)
-{
-	int i = 0;
-
-	for (; s[i] != '\0'; i++)
-		continue;
-
-	return	(i);
-}
-
-/**
  *_printf - Our printf
  *
  *@format: format
@@ -25,43 +10,31 @@ int _strlen(const char *s)
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	int i;
+	int i, count = 0;
 	va_list ptr;
+	int (*f)(va_list) = NULL;
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
+
 	va_start(ptr, format);
-	for (i = 0; i < _strlen(format); i++)
-		switch (format[i])
+
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
 		{
-			case '%':
-				switch (format[(i + 1)])
-				{
-					case 'c':
-						count += printChar(va_arg(ptr, int));
-						break;
-					case 's':
-						count += printString(va_arg(ptr, char *));
-						break;
-					case '%':
-						count += printChar('%');
-						break;
-					case 'd':
-					case 'i':
-						count += printNum(va_arg(ptr, int));
-						break;
-					default:
-						count += printChar('%');
-						count += printChar(format[i + 1]);
-				}
-				i++;
-				break;
-			case 92:
-				break;
-			default:
-				count += printChar(format[i]);
+			f = get_op_func(format[++i]);
+
+			if (f)
+				count += (*f)(ptr);
+			else
+				count += _printf("%%%c", format[i]);
 		}
+		else
+			count += _putchar(format[i]);
+	}
+
 	va_end(ptr);
 	return (count);
 }
+
