@@ -20,7 +20,6 @@ int printChar(va_list args)
 int printString(va_list args)
 {
 	return (putstring(va_arg(args, char *)));
-
 }
 
 /**
@@ -41,7 +40,7 @@ int printNum(va_list args)
 		isNegative = 1;
 	}
 
-	return (putNum(n) + isNegative);
+	return (putNum(n, 10) + isNegative);
 }
 
 /**
@@ -53,4 +52,15 @@ int printNum(va_list args)
 int printSign(__attribute__((unused)) va_list args)
 {
 	return (_putchar('%'));
+}
+
+/**
+ * printBinary - Prints an integer
+ * @args: the number to print
+ * Return: len of number
+ */
+
+int printBinary(va_list args)
+{
+	return (putNum(va_arg(args, unsigned int), 2));
 }

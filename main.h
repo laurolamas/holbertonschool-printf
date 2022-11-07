@@ -22,9 +22,10 @@ int printChar(va_list);
 int printString(va_list);
 int printNum(va_list);
 int printSign(va_list);
+int printBinary(va_list);
 
 int _putchar(char c);
 int putstring(char *str);
-int putNum(long int n);
+int putNum(long int n, int base);
 
 #endif

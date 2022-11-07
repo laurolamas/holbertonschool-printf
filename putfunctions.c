@@ -37,17 +37,18 @@ int putstring(char *str)
 /**
  * putNum - Prints an integer
  * @n: the number to print
+ * @base: base
  * Return: len of number
  */
 
-int putNum(long int n)
+int putNum(long int n, int base)
 {
 	int count = 0;
 
-	if (n / 10)
-		count += putNum(n / 10);
+	if (n / base)
+		count += putNum(n / base, base);
 
-	count += _putchar(n % 10 + '0');
+	count += _putchar(n % base + '0');
 
 	return (count);
 }
