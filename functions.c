@@ -40,7 +40,7 @@ int printNum(va_list args)
 		isNegative = 1;
 	}
 
-	return (putNum(n, 10) + isNegative);
+	return (putNum(n, 10, "0123456789") + isNegative);
 }
 
 /**
@@ -62,5 +62,5 @@ int printSign(__attribute__((unused)) va_list args)
 
 int printBinary(va_list args)
 {
-	return (putNum(va_arg(args, unsigned int), 2));
+	return (putNum(va_arg(args, unsigned int), 2, "01"));
 }

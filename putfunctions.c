@@ -34,22 +34,24 @@ int putstring(char *str)
 	return (i);
 
 }
+
 /**
  * putNum - Prints an integer
  * @n: the number to print
  * @base: base
+ * @digits: digit
  * Return: len of number
  */
 
-int putNum(long int n, int base)
+int putNum(long int n, int base, char *digits)
 {
 	int count = 0;
 
 	if (n / base)
-		count += putNum(n / base, base);
+		count += putNum(n / base, base, digits);
 
-	count += _putchar(n % base + '0');
+	count += _putchar(digits[n % base]);
+	/*count += _putchar(n % base + '0');*/
 
 	return (count);
 }
-

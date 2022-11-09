@@ -18,11 +18,16 @@ int (*get_op_func(char s))(va_list)
 	{'d', printNum},
 	{'i', printNum},
 	{'b', printBinary},
+	{'u', printUnsigned},
+	{'o', printOctal},
+	{'p', printHexidecimal},
+	{'x', printHexidecimal},
+	{'X', printHexidecimalCap}
 	};
 
 	int i = 0;
 
-	while (i < 6)
+	while (i < 11)
 	{
 		if (ops[i].op == s)
 			return (ops[i].f);
