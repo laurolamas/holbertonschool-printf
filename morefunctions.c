@@ -43,3 +43,13 @@ int printHexidecimalCap(va_list args)
 	return (putNum(va_arg(args, unsigned int), 16, "0123456789ABCDEF"));
 }
 
+/**
+ * printAddress - Prints an integer
+ * @args: the number to print
+ * Return: len of number
+ */
+
+int printAddress(va_list args)
+{
+        return(putstring("0x") + putNum(va_arg(args, unsigned long int), 16, "0123456789abcdef"));
+}

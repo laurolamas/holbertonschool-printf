@@ -27,6 +27,7 @@ int printUnsigned(va_list);
 int printOctal(va_list);
 int printHexidecimal(va_list);
 int printHexidecimalCap(va_list);
+int printAddress(va_list);
 
 int putHex(long int);
 int putHexCap(long int);

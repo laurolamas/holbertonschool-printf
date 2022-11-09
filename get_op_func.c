@@ -20,7 +20,7 @@ int (*get_op_func(char s))(va_list)
 	{'b', printBinary},
 	{'u', printUnsigned},
 	{'o', printOctal},
-	{'p', printHexidecimal},
+	{'p', printAddress},
 	{'x', printHexidecimal},
 	{'X', printHexidecimalCap}
 	};
