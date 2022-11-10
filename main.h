@@ -2,11 +2,14 @@
 #define main_h
 
 #include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include <unistd.h>
 
+/**
+ * struct op - Struct op
+ *
+ * @op: The operator
+ * @f: The function associated
+ */
 typedef struct op
 {
 	char op;
@@ -29,8 +32,6 @@ int printHexidecimal(va_list);
 int printHexidecimalCap(va_list);
 int printAddress(va_list);
 
-int putHex(long int);
-int putHexCap(long int);
 int _putchar(char c);
 int putstring(char *str);
 int putNum(long int n, int base, char *digits);
