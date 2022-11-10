@@ -21,3 +21,7 @@ This is our printf implementation.
 
 Upon successful return, _printf returns the number of characters written, _excluding_ the terminating null character used to end the string.
 If any error is encountered, `-1` is returned.
+
+### Flowchart
+
+![Flowchart](./flowchart.png)
