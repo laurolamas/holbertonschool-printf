@@ -34,6 +34,6 @@ int printAddress(va_list);
 
 int _putchar(char c);
 int putstring(char *str);
-int putNum(long int n, int base, char *digits);
+int putNum(unsigned long int n, int base, char *digits);
 
 #endif

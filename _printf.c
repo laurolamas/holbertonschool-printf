@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 
 	va_start(ptr, format);
 
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -28,12 +28,13 @@ int _printf(const char *format, ...)
 			if (f)
 				count += (*f)(ptr);
 			else
-				count += _printf("%%%c", format[i]);
+			{
+				count += (_putchar('%') + _putchar(format[i]));
+			}
 		}
 		else
 			count += _putchar(format[i]);
 	}
-
 	va_end(ptr);
 	return (count);
 }

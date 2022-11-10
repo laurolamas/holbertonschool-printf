@@ -43,7 +43,7 @@ int putstring(char *str)
  * Return: len of number
  */
 
-int putNum(long int n, int base, char *digits)
+int putNum(unsigned long int n, int base, char *digits)
 {
 	int count = 0;
 
