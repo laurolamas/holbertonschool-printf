@@ -52,6 +52,10 @@ int printHexidecimalCap(va_list args)
 int printAddress(va_list args)
 {
 	char *dig = "0123456789abcdef";
+	unsigned long int addr = va_arg(args, unsigned long int);
 
-	return (putstring("0x") + putNum(va_arg(args, unsigned long int), 16, dig));
+	if (addr)
+		return (putstring("0x") + putNum(addr, 16, dig));
+	else
+		return (putstring("(nil)"));
 }
