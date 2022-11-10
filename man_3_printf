@@ -1,24 +1,44 @@
 .TH
 .SH NAME
-_printf \- Prints Text
+_printf \- Format and print data
 .SH SYNOPSIS
-.B _printf [OPTION] ...
+.B _printf FORMAT [ARGUMENT] ...
 .SH DESCRIPTION
 .B _printf
-This is a function that prints diffent things depending on which option has been chosen.
-.SH OPTIONS
+Print ARGUMENT(s) according to FORMAT.
+.SH FORMAT OPTIONS
 .TP
-.BR c
+.BR %c
 Prints a single character.
 .TP
-.BR s
+.BR %s
 Prints a string of characters.
 .TP
-.BR %
+.BR %%
 Prints the "%" symbol.
 .TP
-.BR d
+.BR %d
 Prints a decimal number.
 .TP
-.BR i
+.BR %i
 Prints an integer in base 10.
+.TP
+.BR %u
+Prints an unsigned integer in base 10.
+.TP
+.BR %b
+Prints an unsigned integer in base 2.
+.TP
+.BR %o
+Prints an unsigned integer in base 8.
+.TP
+.BR %x
+Prints an unsigned integer in base 8 (lowercase).
+.TP
+.BR %X
+Prints an unsigned integer in base 8 (uppercase).
+.TP
+.BR %p
+Prints an Address.
+.SH AUTHORS
+Lauro Lamas & Nicolas Hernandez
