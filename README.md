@@ -1,4 +1,4 @@
-# A printf / sprintf Implementation for Embedded Systems
+# _PRINTF
 
 This is our printf implementation.
 
